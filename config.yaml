@@ -1,0 +1,20 @@
+---
+# Cron syntax used: "seconds minute hours day-of-month month day-of-week"
+- silencename: "core-app"
+  starttime: "0 0 0 * * *"
+  duration: "6h"
+  matchers:
+  - name: "alertname"
+    value: "backend"
+    isRegex: false
+  - name: "environment"
+    value: "uat"
+    isRegex: false
+
+- silence: "cloudalerts"
+  starttime: "0 0 0 * * *"
+  duration: "8h"
+  matchers:
+  - name: "datacenter"
+    value: "cloud"
+    isRegex: false
